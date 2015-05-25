@@ -15,6 +15,12 @@
 
             Foo.Bar();
 
+            string json = @"{
+    ""key"": ""value"",
+    ""key2"": ""value2"",
+}";
+            Log.Logger.Information("{0}{1} {2}", "Result", Environment.NewLine, json);
+
             Console.ReadLine();
         }
     }
