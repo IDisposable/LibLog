@@ -1,5 +1,6 @@
 ﻿namespace LibLog.Example.Library
 {
+    using System;
     using LibLog.Example.Library.Logging;
 
     public static class Foo
@@ -8,7 +9,11 @@
 
         public static void Bar()
         {
-            Logger.Info("Baz");
+            string json = @"{
+    ""key"": ""value"",
+    ""key2"": ""value2"",
+}";
+            Logger.InfoFormat("{0}{1} {2}", "Result", Environment.NewLine, json);
         }
     }
 }
