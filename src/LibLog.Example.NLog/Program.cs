@@ -18,6 +18,12 @@
 
             Foo.Bar();
 
+            string json = @"{
+    ""key"": ""value"",
+    ""key2"": ""value2"",
+}";
+            LogManager.GetCurrentClassLogger().Info("{0}{1} {2}", "Result", Environment.NewLine, json);
+
             Console.ReadLine();
         }
     }
