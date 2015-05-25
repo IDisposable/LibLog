@@ -164,8 +164,6 @@
             _sut.InfoFormat("Structured {@data} message", new{ Log="log",Count="1"});
             _logEvent.RenderMessage().Should().Be("Structured { Log: \"log\", Count: \"1\" } message");
             _logEvent.Properties.Keys.Should().Contain("data");
-            
-            
         }
 
         public void Dispose()
