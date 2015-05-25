@@ -1838,8 +1838,8 @@ namespace LibLog.Example.Library.Logging.LogProviders
                 int argumentIndex = 0;
                 foreach (Match match in Pattern.Matches(targetMessage))
                 {
-                    int notUsed;
-                    if (!int.TryParse(match.Value.Substring(1, match.Value.Length -2), out notUsed))
+                    int _;
+                    if (!int.TryParse(match.Value.Substring(1, match.Value.Length -2), out _))
                     {
                         targetMessage = ReplaceFirst(targetMessage, match.Value,
                             "{" + argumentIndex++ + "}");
@@ -1847,7 +1847,7 @@ namespace LibLog.Example.Library.Logging.LogProviders
                 }
                 try
                 {
-                    return String.Format(CultureInfo.InvariantCulture, targetMessage, formatParameters);
+                    return string.Format(CultureInfo.InvariantCulture, targetMessage, formatParameters);
                 }
                 catch (FormatException ex)
                 {
